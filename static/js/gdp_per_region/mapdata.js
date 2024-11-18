@@ -62,87 +62,87 @@ var simplemaps_countrymap_mapdata = {
     PH00: {
       name: "National Capital Region",
       description: "₱7,572.34 B (31.14%)",
-      color: "rgb(70, 110, 170)",
+      color: "rgb(0, 40, 120)",  // Darkest blue for highest percentage
     },
     PH01: {
       name: "Ilocos",
       description: "₱814.28 B (3.35%)",
-      color: "rgb(140, 180, 220)",
+      color: "rgb(130, 170, 220)",
     },
     PH02: {
       name: "Cagayan Valley",
       description: "₱510.83 B (2.10%)",
-      color: "rgb(160, 200, 230)",
+      color: "rgb(160, 200, 235)",
     },
     PH03: {
       name: "Central Luzon",
       description: "₱2,650.68 B (10.89%)",
-      color: "rgb(100, 150, 210)",
+      color: "rgb(40, 80, 160)",  // Darker blue for high percentage
     },
     PH05: {
       name: "Bicol",
       description: "₱701.72 B (2.88%)",
-      color: "rgb(130, 170, 215)",
+      color: "rgb(140, 180, 225)",
     },
     PH06: {
       name: "Western Visayas",
       description: "₱1,244.68 B (5.11%)",
-      color: "rgb(120, 160, 210)",
+      color: "rgb(100, 140, 200)",
     },
     PH07: {
       name: "Central Visayas",
       description: "₱1,579.06 B (6.49%)",
-      color: "rgb(110, 150, 205)",
+      color: "rgb(80, 120, 180)",
     },
     PH08: {
       name: "Eastern Visayas",
       description: "₱568.71 B (2.34%)",
-      color: "rgb(135, 175, 220)",
+      color: "rgb(150, 190, 230)",
     },
     PH09: {
       name: "Zamboanga Peninsula",
       description: "₱531.73 B (2.18%)",
-      color: "rgb(150, 190, 225)",
+      color: "rgb(155, 195, 235)",
     },
     PH10: {
       name: "Northern Mindanao",
       description: "₱1,180.09 B (4.85%)",
-      color: "rgb(115, 155, 210)",
+      color: "rgb(110, 150, 210)",
     },
     PH11: {
       name: "Davao",
       description: "₱1,255.05 B (5.16%)",
-      color: "rgb(120, 160, 215)",
+      color: "rgb(90, 130, 190)",
     },
     PH12: {
       name: "Soccsksargen",
       description: "₱620.37 B (2.55%)",
-      color: "rgb(130, 170, 220)",
+      color: "rgb(145, 185, 230)",
     },
     PH13: {
       name: "Caraga",
       description: "₱406.45 B (1.67%)",
-      color: "rgb(155, 195, 230)",
+      color: "rgb(170, 210, 240)",
     },
     PH14: {
       name: "Autonomous Region in Muslim Mindanao",
       description: "₱363.69 B (1.50%)",
-      color: "rgb(165, 205, 235)",
+      color: "rgb(175, 215, 245)",  // Lightest blue for lowest percentage
     },
     PH15: {
       name: "Cordillera Administrative Region",
       description: "₱410.56 B (1.69%)",
-      color: "rgb(160, 200, 230)",
+      color: "rgb(165, 205, 240)",
     },
     PH40: {
       name: "Calabarzon",
       description: "₱3,436.07 B (14.12%)",
-      color: "rgb(95, 145, 200)",
+      color: "rgb(20, 60, 140)",  // Very dark blue for second highest
     },
     PH41: {
       name: "Mimaropa",
       description: "₱472.21 B (1.94%)",
-      color: "rgb(150, 190, 225)",
+      color: "rgb(160, 200, 235)",
     },
   },
   labels: {
