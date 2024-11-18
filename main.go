@@ -73,12 +73,16 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 		data["Title"] = "Joes Experiences Maps"
 		data["Heading"] = "GDP Per Region in The Philippines"
 		data["Description"] = "GDP of the Philippines in 2023 is 24,318,611,399,000. That is ₱24.3 T and equals to $437.1 B."
+		data["Link"] = "https://openstat.psa.gov.ph/PXWeb/pxweb/en/DB/DB__2B__GP__RG__GRD/0012B5CPGD1.px/"
+		data["LinkText"] = "openstat.psa.gov.ph"
 		data["Folder"] = "gdp_per_region"
 	case "/maps/gdp_per_capita_manila":
 		templateLocation = "./templates/map.html"
 		data["Title"] = "Joes Experiences Maps"
 		data["Heading"] = "GDP Per Capita in Manila - Philippines"
 		data["Description"] = "GDP Per Capita in Manila Per Districts in 2023, Philippines."
+		data["Link"] = "https://psa.gov.ph/statistics/ppa/tables"
+		data["LinkText"] = "psa.gov.ph"
 		data["Folder"] = "gdp_per_capita_manila"
 	case "/about":
 		templateLocation = "./templates/about.html"
