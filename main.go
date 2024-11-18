@@ -95,7 +95,7 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	port := 8080
+	port := 8091
 	if envPort := os.Getenv("PORT"); envPort != "" {
 		if p, err := strconv.Atoi(envPort); err == nil {
 			port = p
