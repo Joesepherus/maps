@@ -1,0 +1,10 @@
+1. Get the base svg from here https://en.wikipedia.org/wiki/Administrative_divisions_of_Metro_Manila
+2. Adjust it in the countrymap.js and mapdata.js
+3. Fix the Taguig one
+	- put the base.svg in here https://boxy-svg.com/app
+	- then move out the taguig part and export, this way it will not have that transform thats fucking it up
+	- put the result here to transform it from absolute path string to relative https://codepen.io/MausWorks/pen/eLrmmY
+	- put it in the countrymap.js and fix its x and y
+4. add the right data
+5. that's it
+
