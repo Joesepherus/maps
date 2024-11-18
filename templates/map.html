@@ -1,0 +1,19 @@
+{{ define "content" }}
+<h1>{{ .Heading }}</h1>
+<div>
+  {{ .Description }}
+</div>
+<div>
+  source:
+  <a
+    target="_blank"
+    href="https://openstat.psa.gov.ph/PXWeb/pxweb/en/DB/DB__2B__GP__RG__GRD/0012B5CPGD1.px/?rxid=c0dc2d6a-d4a6-4373-8deb-7cef535146ee"
+    >openstat.psa.gov.ph</a
+  >
+</div>
+
+<div id="map"></div>
+
+<script src="../static/js/{{ .Folder }}/mapdata.js"></script>
+<script src="../static/js/{{ .Folder }}/countrymap.js"></script>
+{{ end }}

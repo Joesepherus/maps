@@ -1,16 +1,19 @@
 {{ define "content" }}
-<h1>GDP Per Region in The Philippines</h1>
+<h1>{{ .Heading }}</h1>
 <div>
-  GDP of the Philippines in 2023 is 24,318,611,399,000. That is ₱24.3 T and
-  equals to $437.1 B.
+  Links to all our maps:
 </div>
 <div>
-  source:
   <a
-    target="_blank"
-    href="https://openstat.psa.gov.ph/PXWeb/pxweb/en/DB/DB__2B__GP__RG__GRD/0012B5CPGD1.px/?rxid=c0dc2d6a-d4a6-4373-8deb-7cef535146ee"
-    >openstat.psa.gov.ph</a
+    href="/maps/gdp_per_region"
+    >GDP Per Region in the Philippines</a
   >
 </div>
-<div id="map" style="margin: auto"></div>
+<div>
+  <a
+    href="/maps/gdp_per_capita_manila"
+    >GDP Per Capita in Manila - Philippines</a
+  >
+</div>
+
 {{ end }}

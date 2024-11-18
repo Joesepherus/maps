@@ -219,30 +219,6 @@ var simplemaps_countrymap_mapdata = {
     entries: [],
   },
   regions: {
-    0: {
-      states: [
-        "PH00",
-        "PH01",
-        "PH02",
-        "PH03",
-        "PH05",
-        "PH15",
-        "PH40",
-        "PH41",
-      ],
-      name: "Luzon",
-      description: "₱16,568.72 B (68.1%)",
-    },
-    1: {
-      states: ["PH06", "PH07", "PH08"],
-      name: "Visayas",
-      description: "₱3,392.46 B (13.9%)",
-    },
-    2: {
-      states: ["PH13", "PH10", "PH11", "PH12", "PH14", "PH09"],
-      name: "Mindanao",
-      description: "₱4,357.41 B (18%)",
-    },
   },
   data: {
     data: {},

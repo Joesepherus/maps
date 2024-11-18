@@ -25,6 +25,7 @@ func init() {
 	// Parse page-specific templates
 	pageTemplates := []string{
 		"./templates/index.html",
+		"./templates/map.html",
 		"./templates/about.html",
 		"./templates/contact.html",
 		"./templates/404.html",
@@ -40,43 +41,57 @@ func init() {
 	log.Printf("templates:", templates)
 }
 
-// Render the specified page template within the base layout
-func renderTemplate(w http.ResponseWriter, templateName string, title string) {
+func RenderTemplate(w http.ResponseWriter, r *http.Request, templateName string, data map[string]interface{}) {
 	tmpl, ok := templates[templateName]
 	if !ok {
-		http.Error(w, "Template not found", http.StatusNotFound)
+		log.Println("Template not found")
+		http.Redirect(w, r, "/error?message=Template+not+found", http.StatusSeeOther)
 		return
 	}
 
-	err := tmpl.ExecuteTemplate(w, "base.html", map[string]interface{}{
-		"Title":   title,
-		"Content": templateName,
-	})
+	err := tmpl.ExecuteTemplate(w, "base.html", data)
 	if err != nil {
-		log.Printf("Failed to execute template: %v", err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		log.Println("Failed to execute template")
+		http.Redirect(w, r, "/error?message=Failed+to+execute+template", http.StatusSeeOther)
+		return
 	}
 }
 
 func pageHandler(w http.ResponseWriter, r *http.Request) {
-	var templateLocation, pageTitle string
+	var templateLocation string
+	data := map[string]interface{}{
+		"Email": "",
+		// Add other default data here if needed
+	}
 
 	switch r.URL.Path {
 	case "/":
 		templateLocation = "./templates/index.html"
-		pageTitle = "Joes Experiences Maps"
+		data["Title"] = "Joes Experiences Maps"
+	case "/maps/gdp_per_region":
+		templateLocation = "./templates/map.html"
+		data["Title"] = "Joes Experiences Maps"
+		data["Heading"] = "GDP Per Region in The Philippines"
+		data["Description"] = "GDP of the Philippines in 2023 is 24,318,611,399,000. That is ₱24.3 T and equals to $437.1 B."
+		data["Folder"] = "gdp_per_region"
+	case "/maps/gdp_per_capita_manila":
+		templateLocation = "./templates/map.html"
+		data["Title"] = "Joes Experiences Maps"
+		data["Heading"] = "GDP Per Capita in Manila - Philippines"
+		data["Description"] = "GDP Per Capita in Manila Per Districts in 2023, Philippines."
+		data["Folder"] = "gdp_per_capita_manila"
 	case "/about":
 		templateLocation = "./templates/about.html"
-		pageTitle = "About Us - Joes Experiences Maps"
+		data["Title"] = "About Us - Joes Experiences Maps"
 	case "/contact":
 		templateLocation = "./templates/contact.html"
-		pageTitle = "Contact Us - Joes Experiences Maps"
+		data["Title"] = "Contact Us - Joes Experiences Maps"
 	default:
 		templateLocation = "./templates/404.html"
-		pageTitle = "Page not found"
+		data["Title"] = "Page not found"
 	}
 
-	renderTemplate(w, templateLocation, pageTitle)
+	RenderTemplate(w, r, templateLocation, data)
 }
 
 func main() {
@@ -88,7 +103,7 @@ func main() {
 	}
 
 	// Serve static files (e.g., images, CSS, JavaScript)
-	fs := http.FileServer(http.Dir("./static"))
+	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	http.HandleFunc("/", pageHandler)
